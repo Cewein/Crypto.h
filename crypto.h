@@ -1,5 +1,7 @@
+#pragma once
 #ifndef CRYTPO_H_INCLUDED
 #define CRYPTO_H_INCLUDED
+
 
 #include <iostream>
 #include <fstream>
@@ -13,20 +15,26 @@ public:
 	File(const char * filePath);
 	~File();
 
+	//rsa
+	int p;
+	int q;
+	int n;
+	int nT;
+	int e;
+	int d;
+
+
 	//No need for privacy it's unreadible or just name file
 	std::string fileEncrypt;
 	std::string fileName;
 
-	//no description needed
-	void intro(); // ok
-	void selectName(); //ok
+	void selectName();
 
-	void readFile(); //ok
-	void readFile(const char * c_filePath); // ok
-
+	void readFile();
+	void readFile(const char * c_filePath);
 
 	//encryption
-	void encryptFile(); //ok
+	void encryptFile();
 	void writeFile(std::string charsToWrite); //ok ?
 	void writeFile(std::string charsToWrite, std::string name); //ok ?
 
