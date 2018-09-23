@@ -18,41 +18,7 @@ File::~File() {}
 void File::encryptFile()
 {
 
-	std::time_t result = std::time(nullptr);
-
-	std::cout << "crypting file\n" << std::endl;
-
-	char cryp;
-	int i = 0;
-	std::srand(std::time(NULL));
-	while (i < fileClear.length())
-	{
-
-		cryp = fileClear[i];
-		int startPos = std::rand() %( key.length()-2);
-		//std::cout << startPos << std::endl;
-		for (int j = startPos; j < key.length() - 2; j++)
-		{
-			if (j % 2)
-			{
-				cryp -= key[j];
-			}
-			else
-			{
-				cryp += key[j];
-			}
-		}
-
-		fileEncrypt += (48 + startPos);
-		fileEncrypt += cryp;
-		
-
-		/*Old way, to easy to reverse
-		cbin = cbin.flip();
-		char cryp = cbin.to_ulong();*/
-
-		i++;
-	}
+	
 
 }
 
